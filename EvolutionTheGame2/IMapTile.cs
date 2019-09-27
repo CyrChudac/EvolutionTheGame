@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EvolutionTheGame2
 {
-    public class Class1
-    {
-    }
+	interface IMapTile
+	{
+	}
 }
