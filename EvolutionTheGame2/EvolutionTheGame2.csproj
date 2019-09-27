@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BackgroundEnvironment.cs" />
     <Compile Include="Cost.cs" />
+    <Compile Include="Direction.cs" />
     <Compile Include="Health.cs" />
     <Compile Include="Interaction.cs" />
     <Compile Include="IEnvironment.cs" />

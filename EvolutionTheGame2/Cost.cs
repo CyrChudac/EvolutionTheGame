@@ -13,7 +13,28 @@ namespace EvolutionTheGame2
 			Time = time;
 			Agility = agility;
 		}
+		static Cost()
+		{
+			int defaultTime = 15;
+			int defaultAgility = Organism.DefaultStartingAgility * 2 / 5;
+			DefaultCreationCost = new Cost(defaultTime, defaultAgility);
+			DefaultExistenceCost = new Cost(0, defaultAgility / 3);
+			DefaultDestructCost = new Cost(defaultTime / 2, defaultAgility * 3 / 4);
+
+		}
+		public static readonly Cost DefaultCreationCost;
+		public static readonly Cost DefaultExistenceCost;
+		public static readonly Cost DefaultDestructCost;
 		public int Time { get; private set; }
 		public int Agility { get; private set; }
+
+		public static Cost operator *(Cost a, int b)
+			=> new Cost(a.Time * b, a.Agility * b);
+		public static Cost operator *(int b, Cost a)
+			=> a * b;
+		public static Cost operator *(Cost a, float b)
+			=> new Cost((int)(a.Time * b), (int)(a.Agility * b));
+		public static Cost operator *(float b, Cost a)
+			=> a * b;
 	}
 }
