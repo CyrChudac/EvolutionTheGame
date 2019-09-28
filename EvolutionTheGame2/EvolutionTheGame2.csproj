@@ -48,6 +48,8 @@
     <Compile Include="Interaction.cs" />
     <Compile Include="IEnvironment.cs" />
     <Compile Include="IMapTile.cs" />
+    <Compile Include="IntExtensions.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Organism.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

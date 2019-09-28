@@ -20,11 +20,13 @@ namespace EvolutionTheGame2
 			DefaultCreationCost = new Cost(defaultTime, defaultAgility);
 			DefaultExistenceCost = new Cost(0, defaultAgility / 3);
 			DefaultDestructCost = new Cost(defaultTime / 2, defaultAgility * 3 / 4);
+			DefaultUseCost = new Cost(0, defaultAgility / 3);
 
 		}
 		public static readonly Cost DefaultCreationCost;
 		public static readonly Cost DefaultExistenceCost;
 		public static readonly Cost DefaultDestructCost;
+		public static readonly Cost DefaultUseCost;
 		public int Time { get; private set; }
 		public int Agility { get; private set; }
 

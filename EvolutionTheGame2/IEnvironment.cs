@@ -11,6 +11,7 @@ namespace EvolutionTheGame2
 		IMapTile[,] Map { get; }
 		Organism[,] OrganismsMap { get; }
 		void AddOrganism(Organism o, int aftermiliseconds);
+		IMapTile this [Location l] { get; }
 	}
 
 	class Environment : IEnvironment
@@ -22,6 +23,8 @@ namespace EvolutionTheGame2
 			Organisms = new List<Organism>();
 			environment.OrganismsList.Add(Organisms);
 		}
+
+		public IMapTile this [Location l] => Map[l.X, l.Y];
 
 		List<Organism> Organisms;
 

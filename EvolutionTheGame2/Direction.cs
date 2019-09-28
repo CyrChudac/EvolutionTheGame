@@ -9,8 +9,8 @@ namespace EvolutionTheGame2
 	enum Direction
 	{
 		up,
-		down,
 		right,
+		down,
 		left
 	}
 }

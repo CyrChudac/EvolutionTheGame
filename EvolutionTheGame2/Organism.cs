@@ -15,10 +15,12 @@ namespace EvolutionTheGame2
 		}
 		readonly OrganismLogic logic;
 
+		internal Direction lookingAt;
+		internal Location Location;
 		internal void InternalUpdate() => logic.OrgUpdate();
 		internal int TimeCost { get; private set; }
 
-		protected internal int Agility { get; private set; } = DefaultStartingAgility;
+		protected internal int Agility { get; internal set; } = DefaultStartingAgility;
 		protected Health Health { get; private set; }
 		protected abstract void Update();
 		protected bool TryRegisterInteraction<T>(out T result) where T : Interaction, new()
@@ -28,7 +30,6 @@ namespace EvolutionTheGame2
 
 		struct OrganismLogic
 		{
-			Direction lookingAt;
 			IEnvironment environment;
 			List<Interaction> interactions;
 			internal OrganismLogic(Organism o, IEnvironment environment)
@@ -36,7 +37,7 @@ namespace EvolutionTheGame2
 				interactions = new List<Interaction>();
 				this.environment = environment;
 				Organism = o;
-				lookingAt = (Direction)new Random().Next(Enum.GetNames(typeof(Direction)).Length);
+				Organism.lookingAt = (Direction)new Random().Next(Enum.GetNames(typeof(Direction)).Length);
 			}
 			Organism Organism;
 			public void OrgUpdate()
