@@ -8,8 +8,8 @@ namespace EvolutionTheGame2
 {
 	class BackgroundEnvironment
 	{
-		public IMapTile[,] Map { get; }
-		public Organism[,] OrganismsMap { get; }
+		public Layer<IMapTile> Map { get; }
+		public Layer<Organism> OrganismsMap { get; }
 		public List<List<Organism>> OrganismsList { get; }
 	}
 }

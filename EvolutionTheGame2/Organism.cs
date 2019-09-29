@@ -27,6 +27,10 @@ namespace EvolutionTheGame2
 			=> logic.TryRegisterInteraction<T>(out result);
 		protected T RegisterInteraction<T>() where T : Interaction, new()
 			=> logic.RegisterInteraction<T>();
+		internal void Attacked(int strength)
+		{
+			throw new NotImplementedException();
+		}
 
 		struct OrganismLogic
 		{
