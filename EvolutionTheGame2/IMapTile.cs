@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace EvolutionTheGame2
 {
-	enum IMapTile
+	public enum IMapTile
 	{
 		Nothing,
-		Wall
+		Wall,
+		AllyLife,
+		EnemyLife,
+		You
 	}
 }

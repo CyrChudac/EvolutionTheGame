@@ -11,7 +11,8 @@ namespace EvolutionTheGame2
 		Layer<IMapTile> Map { get; }
 		Layer<Organism> OrganismsMap { get; }
 		void AddOrganism(Organism o, int aftermiliseconds);
-		IMapTile this [Location l] { get; }
+		IMapTile this[Location l] { get; }
+		IMapTile this[int x, int y] { get; }
 	}
 
 	class Environment : IEnvironment
@@ -24,6 +25,7 @@ namespace EvolutionTheGame2
 			environment.OrganismsList.Add(Organisms);
 		}
 
+		public IMapTile this[int x, int y] => Map[x,y];
 		public IMapTile this [Location l] => Map[l];
 
 		List<Organism> Organisms;
@@ -40,12 +42,18 @@ namespace EvolutionTheGame2
 
 	struct Layer<T>
 	{
+		public Layer(T[,] field)
+			=> layer = field;
 		T[,] layer { get; }
-
+		public T this[int x, int y]
+		{
+			get => layer[x.Modulo(layer.GetLength(0)), y.Modulo(layer.GetLength(1))];
+			set => layer[x.Modulo(layer.GetLength(0)), y.Modulo(layer.GetLength(1))] = value;
+		}
 		public T this [Location l]
 		{
-			get => layer[l.X, l.Y];
-			set => layer[l.X, l.Y] = value;
+			get => this[l.X, l.Y];
+			set => this[l.X, l.Y] = value;
 		}
 	}
 }

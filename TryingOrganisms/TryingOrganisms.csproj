@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60197497-C827-4CF9-8EEA-9FBFA6C26111}</ProjectGuid>
+    <ProjectGuid>{7772985C-3A3A-4B6B-9AF7-D059ED03409A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EvolutionTheGame2</RootNamespace>
-    <AssemblyName>EvolutionTheGame2</AssemblyName>
+    <RootNamespace>TryingOrganisms</RootNamespace>
+    <AssemblyName>TryingOrganisms</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,19 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackgroundEnvironment.cs" />
-    <Compile Include="Cost.cs" />
-    <Compile Include="Direction.cs" />
-    <Compile Include="Health.cs" />
-    <Compile Include="Interactions\Defenses.cs" />
-    <Compile Include="Interactions\Interaction.cs" />
-    <Compile Include="IEnvironment.cs" />
-    <Compile Include="IMapTile.cs" />
-    <Compile Include="Interactions\Interactions.cs" />
-    <Compile Include="IntExtensions.cs" />
-    <Compile Include="Location.cs" />
-    <Compile Include="Organism.cs" />
+    <Compile Include="Agressive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvolutionTheGame2\EvolutionTheGame2.csproj">
+      <Project>{60197497-c827-4cf9-8eea-9fbfa6c26111}</Project>
+      <Name>EvolutionTheGame2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
